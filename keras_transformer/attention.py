@@ -36,7 +36,7 @@ class _BaseMultiHeadAttention(Layer):
         if (compression_window_size is not None
                 and compression_window_size <= 0):
             assert ValueError(
-                f"Too small compression window ({compression_window_size})")
+                "Too small compression window (" + str(compression_window_size) + ")")
         self.compression_window_size = compression_window_size
         super().__init__(**kwargs)
 
