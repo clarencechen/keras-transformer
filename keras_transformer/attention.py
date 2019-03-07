@@ -84,9 +84,9 @@ class _BaseMultiHeadAttention(Layer):
     def validate_model_dimensionality(self, d_model: int):
         if d_model % self.num_heads != 0:
             raise ValueError(
-                f'The size of the last dimension of the input '
-                f'({d_model}) must be evenly divisible by the number'
-                f'of the attention heads {self.num_heads}')
+                'The size of the last dimension of the input ' +
+                '(' + str(d_model) + ') must be evenly divisible by the number' +
+                'of the attention heads ' + str(self.num_heads))
 
     def attention(self, pre_q, pre_v, pre_k, out_seq_len: int, d_model: int,
                   training=None):
@@ -234,9 +234,9 @@ class MultiHeadAttention(_BaseMultiHeadAttention):
         values_dim, query_dim = input_shape[0][-1], input_shape[1][-1]
         if query_dim != values_dim:
             raise ValueError(
-                f'Both keys/value and query inputs must be '
-                f'of the same dimensionality, instead of '
-                f'{values_dim} and {query_dim}.')
+                'Both keys/value and query inputs must be ' +
+                'of the same dimensionality, instead of ' +
+                str(values_dim) + ' and ' + str(query_dim) + '.')
         d_model = query_dim
         self.validate_model_dimensionality(d_model)
         # These weights are concatenated matrices W_k and W_v which

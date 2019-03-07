@@ -162,7 +162,7 @@ def main(model_save_path: str,
                 loss=losses.sparse_categorical_crossentropy,
                 metrics=[perplexity])
         else:
-            raise RuntimeError(f'Unknown model {model_name}')
+            raise RuntimeError('Unknown model ' + model_name)
         return _model
 
     if os.path.exists(model_save_path):
@@ -208,7 +208,7 @@ def main(model_save_path: str,
     test_x, test_y = x_y_for_dataset(wikitext.TEST_SET_NAME)
     test_metrics = model.evaluate(test_x, test_y, batch_size=batch_size)
     for metric_name, metric_value in zip(model.metrics_names, test_metrics):
-        print(f'Test {metric_name}:', metric_value)
+        print('Test ' + metric_name + ':', metric_value)
 
 
 if __name__ == '__main__':

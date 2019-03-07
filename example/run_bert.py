@@ -149,7 +149,7 @@ def main(model_save_path: str,
         test_batches.generate_batches(),
         test_batches.steps_per_epoch)
     for metric_name, metric_value in zip(model.metrics_names, test_metrics):
-        print(f'Test {metric_name}:', metric_value)
+        print('Test ' + metric_name + ':', metric_value)
 
 
 if __name__ == '__main__':

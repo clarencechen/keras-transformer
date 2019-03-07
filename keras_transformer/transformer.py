@@ -175,16 +175,16 @@ class TransformerBlock:
         self.attention_layer = MultiHeadSelfAttention(
             num_heads, use_masking=use_masking, dropout=attention_dropout,
             compression_window_size=compression_window_size,
-            name=f'{name}_self_attention')
-        self.norm1_layer = LayerNormalization(name=f'{name}_normalization1')
+            name=name + '_self_attention')
+        self.norm1_layer = LayerNormalization(name=name + '_normalization1')
         self.dropout_layer = (
-            Dropout(residual_dropout, name=f'{name}_dropout')
+            Dropout(residual_dropout, name=name + '_dropout')
             if residual_dropout > 0
             else lambda x: x)
-        self.norm2_layer = LayerNormalization(name=f'{name}_normalization2')
+        self.norm2_layer = LayerNormalization(name=name + '_normalization2')
         self.transition_layer = TransformerTransition(
-            name=f'{name}_transition', activation=activation)
-        self.addition_layer = Add(name=f'{name}_add')
+            name=name + '_transition', activation=activation)
+        self.addition_layer = Add(name=name + '_add')
         self.vanilla_wiring = vanilla_wiring
 
     def __call__(self, _input):
