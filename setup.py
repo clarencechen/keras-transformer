@@ -14,7 +14,7 @@ setup(
     url='https://github.com/kpot/keras-transformer',
     author='Kirill Mavreshko',
     author_email='kimavr@gmail.com',
-    python_requires='>=3.5.0',
+    python_requires='>=3.4.3',
 
     classifiers=[
         'Development Status :: 5 - Production/Stable',
