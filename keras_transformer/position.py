@@ -45,6 +45,7 @@ class AddPositionalEncoding(Layer):
         self.max_timescale = max_timescale
         self.signal = None
         super().__init__(**kwargs)
+        self.supports_masking = True
 
     def get_config(self):
         config = super().get_config()
@@ -97,6 +98,7 @@ class TransformerCoordinateEmbedding(Layer):
     def __init__(self, max_transformer_depth: int, **kwargs):
         self.max_depth = max_transformer_depth
         super().__init__(**kwargs)
+        self.supports_masking = True
 
     def get_config(self):
         config = super().get_config()

@@ -34,6 +34,7 @@ class LayerNormalization(Layer):
     def __init__(self, axis=-1, **kwargs):
         self.axis = axis
         super().__init__(**kwargs)
+        self.supports_masking = True
 
     def get_config(self):
         config = super().get_config()
@@ -84,6 +85,7 @@ class TransformerTransition(Layer):
         self.activation = activations.get(activation)
         self.size_multiplier = size_multiplier
         super().__init__(**kwargs)
+        self.supports_masking = True
 
     def get_config(self):
         config = super().get_config()

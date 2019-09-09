@@ -286,6 +286,9 @@ class MultiHeadSelfAttention(_BaseMultiHeadAttention):
     Uses only one input and has implementation which is better suited for
     such use case that more general MultiHeadAttention class.
     """
+    def __init__(self, **kwargs):
+        super(self, MultiHeadSelfAttention).__init__(**kwargs)
+        self.supports_masking = True
 
     # noinspection PyAttributeOutsideInit
     def build(self, input_shape):
