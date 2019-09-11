@@ -11,9 +11,9 @@ setup(
     setup_requires=['setuptools_scm'],
     description=('Library for building (Universal) Transformer models '
                  'using Keras'),
-    url='https://github.com/kpot/keras-transformer',
-    author='Kirill Mavreshko',
-    author_email='kimavr@gmail.com',
+    url='https://github.com/clarencechen/keras-transformer',
+    author='Clarence Chen',
+    author_email='clarencechenct@berkeley.edu',
     python_requires='>=3.4.3',
 
     classifiers=[
