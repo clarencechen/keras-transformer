@@ -175,7 +175,7 @@ class TransformerBlock:
                  use_masking: bool = True,
                  vanilla_wiring=False):
         self.attention_layer = MultiHeadSelfAttention(
-            num_heads, use_masking=use_masking, dropout=attention_dropout,
+            num_heads=num_heads, use_masking=use_masking, dropout=attention_dropout,
             compression_window_size=compression_window_size,
             name=name + '_self_attention')
         self.norm1_layer = LayerNormalization(name=name + '_normalization1')
