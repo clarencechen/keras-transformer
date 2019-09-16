@@ -287,7 +287,7 @@ class MultiHeadSelfAttention(_BaseMultiHeadAttention):
     such use case that more general MultiHeadAttention class.
     """
     def __init__(self, **kwargs):
-        super(self, MultiHeadSelfAttention).__init__(**kwargs)
+        super(MultiHeadSelfAttention, self).__init__(**kwargs)
         self.supports_masking = True
 
     # noinspection PyAttributeOutsideInit
